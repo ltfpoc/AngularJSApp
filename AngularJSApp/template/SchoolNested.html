@@ -1,0 +1,10 @@
+﻿<div>
+    <p>Welcome to School</p>
+    <p>List of Students</p>
+    <ul>
+        <li ng-repeat="student in students">
+            <p>Student name is : {{ student.name }}  and ID is :{{ student.id }} </p> 
+        </li>
+    </ul>
+    <ng-transclude></ng-transclude>
+</div>

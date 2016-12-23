@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="MainPage.js"></script>
+</head>
+<body>
+    <div ng-controller="MainCtrl">
+        
+        <a href="#/about">About</a>
+        <a href="#/contact">Contact Us</a>
+        <a href="#/welcome">Welcome</a>
+        <hr />
+        <ng-view></ng-view>
+    </div>
+</body>
+</html>

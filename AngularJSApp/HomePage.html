@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="HomePage.js"></script>
+    <style>
+        .freezing { color: blue ; font-weight: bold}
+        .hot { color: red ; font-weight: bold}
+        .normal { color: green ; font-weight: bold}
+    </style>
+</head>
+<body>
+    <!--directivs reacts to browser events-->
+    <div ng-controller="RolloverCtrl">
+        <tst-rollover-browser-events label="This is 1st directive"></tst-rollover-browser-events>
+    </div>
+    <div ng-controller="ThermoCtrl" style="display:none">
+        <div tst_thermo temprature="{{ currTemp }}"></div>
+        <hr />
+        <p>Please enter temprature</p>
+        <input type="text" ng-model="currTemp" />
+    </div>
+    
+    <!--nested directives-->
+    <div ng-controller="NestedCtrl" style="display:none"> 
+        <tst-school-view-nested>
+            <tst-student-view-nested name="pradeep sinde" id="101"></tst-student-view-nested>
+        </tst-school-view-nested>
+        <tst-school-view-nested>
+            <tst-student-view-nested name="koushik saha" id="101"></tst-student-view-nested>
+            <tst-student-view-nested name="Jatin Kumar" id="102"></tst-student-view-nested>
+        </tst-school-view-nested>
+    </div>
+
+    <div ng-controller="SchoolCtrl" style="display:none">
+        <!--<tst-school-view tst-physics></tst-school-view>-->
+    </div>
+
+    <div ng-controller="TranscludeCtrl as tran" style="display:none">
+        <tst-trans-dir item="tran.user">
+
+            <p>This is the message from directive internal </p>
+        </tst-trans-dir>
+    </div>
+
+    <div ng-controller="DynamicCtrl as dyna" style="display:none">
+        <tst_generate_animals item='bird' controller-name="BirdCtrl"></tst_generate_animals>
+        <tst_generate_animals item='horse' controller-name="HorseCtrl"></tst_generate_animals>
+        <tst_generate_animals item='snake' controller-name="SnakeCtrl"></tst_generate_animals>
+
+    </div>
+
+    <div ng-controller="NumberCtrl as num" style="display:none">
+        <tst_generate_numbers count="4" on-save="num.SaveFirst()"
+                              generator-function="num.GenerateRandomNumbers(count)"></tst_generate_numbers>
+        <tst_generate_numbers count="24" on-save="num.SaveFirst()"
+                              generator-function="num.GenerateSequenceNumbers(count)"></tst_generate_numbers>
+
+    </div>
+
+    <div ng-controller="HomeCtrl" style="display:none">
+
+        <span tst-vehicle-disp holder="firstItem"></span>
+        <tst-vehicle-disp holder="secondItem"></tst-vehicle-disp>
+
+        <p>FirstItem Price</p>
+        <p><input type="text" ng-model="firstItem.price" /></p>
+
+        <p>SecondItem Price</p>
+        <p><input type="text" ng-model="secondItem.price" /></p>
+    </div>
+
+</body>
+</html>
