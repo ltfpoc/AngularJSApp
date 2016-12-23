@@ -10,13 +10,18 @@
     <script src="MainPage.js"></script>
 </head>
 <body>
-    <div ng-controller="MainCtrl">
+    <!--<div ng-controller="MainCtrl">-->
         
         <a href="#/about">About</a>
         <a href="#/contact">Contact Us</a>
         <a href="#/welcome">Welcome</a>
+        <a href="#/product/1">Product</a>
         <hr />
+        <div ng-controller="NavCtrl as nav">
+            <button ng-click="nav.goto('/welcome')">Welcome</button>
+            <button ng-click="nav.goto('/product/1')">Product</button>
+        </div>
         <ng-view></ng-view>
-    </div>
+    <!--</div>-->
 </body>
 </html>

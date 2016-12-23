@@ -887,6 +887,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="template\DynamicController.html" />
     <Content Include="template\GenerateNumbers.html" />
+    <Content Include="template\Product.html" />
     <Content Include="template\School.html" />
     <Content Include="template\SchoolNested.html" />
     <Content Include="template\StudentNested.html" />
