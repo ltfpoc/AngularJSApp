@@ -11,17 +11,30 @@
 </head>
 <body>
     <!--<div ng-controller="MainCtrl">-->
-        
-        <a href="#/about">About</a>
-        <a href="#/contact">Contact Us</a>
-        <a href="#/welcome">Welcome</a>
-        <a href="#/product/1">Product</a>
-        <hr />
-        <div ng-controller="NavCtrl as nav">
-            <button ng-click="nav.goto('/welcome')">Welcome</button>
-            <button ng-click="nav.goto('/product/1')">Product</button>
+        <div style="display:none">
+            <a href="#/about">About</a>
+            <a href="#/contact">Contact Us</a>
+            <a href="#/welcome">Welcome</a>
+            <a href="#/product/1">Product</a>
         </div>
-        <ng-view></ng-view>
+        <hr />
+
+    <div ng-controller="WatchCtrl as wtch">
+        <input type="text" ng-model="wtch.name" />
+        <p> {{ wtch.name }}</p>
+        <p> {{ wtch.message }}</p>
+
+    </div>
+    <div ng-controller="filterController as filt" style="display:none">
+        <button ng-click="filt.getFilterText()">Show Value</button>
+        {{ filt.testValue}}
+
+    </div>
+        <div ng-controller="NavCtrl as nav" style="display:none">
+            <button ng-click="nav.goto('/welcome')">Welcome</button>
+            <button type="button" ng-click="nav.goto('/product/1')">Product</button>
+        </div>
+        <!--<ng-view></ng-view>-->
     <!--</div>-->
 </body>
 </html>
